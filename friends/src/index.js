@@ -4,12 +4,12 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import superCoolReducer from './reducers/index';
+import friendReducer from './reducers/index';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 const store = createStore(
-      superCoolReducer,
+      friendReducer,
       applyMiddleware(thunk, logger)
 );
 

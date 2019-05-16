@@ -2,14 +2,14 @@ import axios from 'axios';
 import { axiosWithAuth } from '../axiosWithAuth';
 //action types
 export const LOGIN_START = 'LOGIN_START';
-export const LOGIN_SUCCEED = 'LOGIN_SUCCEED';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const FETCH_FRIENDS = 'FETCH_FRIENDS';
 export const FETCH_SUCCESS = 'SUCCESS';
 export const FETCH_FAIL = 'FAILURE';
 
 //action creators
-export const login = () => dispatch => {
+export const login = creds => dispatch => {
       dispatch({ type: LOGIN_START });
       return axios
             .post('http://localhost:5000/api/login', creds)

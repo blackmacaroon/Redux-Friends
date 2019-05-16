@@ -15,7 +15,7 @@ const initialState = {
       friends: [],
       isFetching: false,
       error: null,
-      isLogginIn: false
+      loggedIn: false
 };
 
 export const friendReducer = (state = initialState, action) => {
@@ -24,13 +24,13 @@ export const friendReducer = (state = initialState, action) => {
             case LOGIN_START:
                   return {
                         ...state,
-                        isLogginIn: true,
+                        loggedIn: true,
                         error: ''
                   };
             case LOGIN_SUCCESS:
                   return {
                         ...state,
-                        isLogginIn: false,
+                        loggedIn: false,
                         error: ''
                   };
             case LOGIN_FAIL:
