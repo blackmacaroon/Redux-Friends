@@ -4,8 +4,6 @@ import {
       LOGIN_SUCCESS, 
       LOGIN_FAIL, 
       FETCH_FRIENDS, 
-      SUCCESS, 
-      FAILURE, 
       FETCH_SUCCESS,
       FETCH_FAIL
 } from '../actions/index';
@@ -14,6 +12,9 @@ import {
 const initialState = {
       friends: [],
       isFetching: false,
+      isDeleting: false,
+      isSaving: false,
+      isUpdating: false,
       error: null,
       loggedIn: false
 };

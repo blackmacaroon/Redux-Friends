@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
-import { login } from '../actions/index';
+import { login } from '../actions';
 
 class Login extends React.Component {
       state = {
@@ -55,6 +55,15 @@ class Login extends React.Component {
 
                         </form>
                   </div>
-            )
+            );
       }
 };
+
+const mapStateToProps = state => ({
+      loggedIn: state.loggedIn
+});
+
+export default connect(
+      mapStateToProps,
+      { login }
+)(Login);

@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { PrivateRoute } from '/PrivateRoute';
-import { FriendListView } from './views/FriendListView';
+import PrivateRoute from './PrivateRoute';
+import Login from './components/LoginForm';
+import FriendListView from './views/FriendListView';
 import './App.css';
 
 function App() {
