@@ -42,7 +42,7 @@ const friendReducer = (state = initialState, action) => {
                   };
             case LOGIN_FAIL:
                   return {
-                        error: 'UH-OH.'
+                        error: `UH-OH. ${action.payload}`
                   };
             case FETCH_FRIENDS:
                   return {
@@ -60,7 +60,7 @@ const friendReducer = (state = initialState, action) => {
             case FETCH_FAIL:
                   return {
                         isFetching: false,
-                        error: 'unplug it, then plug it back in?'
+                        error: `unplug it, then plug it back in? ${action.payload}`
                   }
             case ADD_FRIEND_START:
                   return {
@@ -78,7 +78,7 @@ const friendReducer = (state = initialState, action) => {
                   return {
                         ...state,
                         isAdding: false,
-                        error: 'not really "your people"'
+                        error: `not really "your people" ${action.payload}`
 
                   }
             case EDIT_FRIEND_START:
@@ -97,8 +97,28 @@ const friendReducer = (state = initialState, action) => {
                   return {
                         ...state,
                         isEditing: false,
-                        error: 'try to change yourself, first.'
+                        error: `try to change yourself, first. ${action.payload}`
                   }
+            case DELETE_FRIEND_START:
+                  return {
+                        ...state,
+                        isFetching: true,
+                        error: ''
+                  }
+            case DELETE_FRIEND_SUCCESS:
+                  return {
+                        ...state,
+                        isFetching: false,
+                        friends: action.payload,
+                        error: ''
+                  }
+            case DELETE_FRIEND_FAILURE:
+                  return {
+                        ...state,
+                        isFetching: false,
+                        error: `you won't get away that easily. ${action.payload}`
+                  }
+
             default:
                   return state;
       }
